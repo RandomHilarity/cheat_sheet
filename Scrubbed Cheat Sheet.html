@@ -166,7 +166,7 @@
         const fullDate = new Date();
         const today = fullDate.getDate();
         const monthEnd = new Date(fullDate.getFullYear(), fullDate.getMonth()+1, 0).getDate();
-        if (today === 15 | today === monthEnd) {
+        if (today === 15 || today === monthEnd) {
             alert("Invoice due within 24 hours!")
         };
     </script>
