@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Cheat sheet for at-home call centre employees, specific links redacted">
+        <meta name="author" content="John Webster">
+        <script src="https://kit.fontawesome.com/248239a975.js" crossorigin="anonymous"></script>
+        <title>Cheat Sheet</title>
+        <style>
+            body { background: #FEFEE3; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; }
+            header { margin: auto; }
+            main { max-width: 600px; margin: auto; }
+            a { text-decoration: none; color: inherit; }
+            h1 { color: #4C956C; padding: 0; margin: auto; text-align: center; }
+            h3 { padding-left: 1em; }
+            .centerText { text-align: center; }
+            hr { border: 2px solid #FEFEE3; border-radius: 1px; }
+            
+            .webLinks { background: #2C6E49; padding: 1em; margin-bottom: 0.5em; border-radius: 10px; 
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; }
+            .webLinksSharepoint { background: #4C956C; border-radius: 10px; padding: 1em; 
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; }
+            table { width: 95%; margin: 1em; }
+
+            button {
+                display: inline-block;
+                border: 1px solid #FEFEE3;
+                border-radius: 5px;
+                margin: 0;
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 1em;
+                cursor: pointer;
+                text-align: center;
+                transition: background 250ms ease-in-out, 
+                            transform 150ms ease;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+            }          
+            button:hover { background: #4C956C; }
+            button:active { transform: scale(0.99); }            
+            .buttons { background: #D68C45; border-radius: 10px; margin: 0.5em 0em; padding: 0.5em; display: flex; 
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; }
+            .buttonDiv { display: flex; flex: 1; }
+            .smallButtonDiv { display: flex; flex-direction: column; justify-content: space-between; }
+            .smallButton { background: transparent; margin-left: 5px; height: 1.9em; width: 1.9em; padding: 0; }
+            .bigButton { width: 80%; height: 4em; background: transparent; }
+
+            .dailyChecklist { background: #2C6E49; padding: 1em; margin-bottom: 0.5em; border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; }            
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Cheat Sheet</h1>
+        </header>
+        <main>
+            <section class="webLinks">
+                <div>
+                    <h3>Web Links</h3>
+                    <hr>
+                    <ul>
+                        <a href=""><strong>Important Reference Link</strong></a> 
+                    </ul>
+                    <ul>
+                        <a href=""><strong>Important Reference Link</strong></a>
+                    </ul>
+                    <ul>
+                        <a href="">Reference Link</a>
+                    </ul>
+                    <ul>
+                        <a href="">Reference Link</a>
+                    </ul>
+                    <ul>
+                        <a href="">Reference Link</a>
+                    </ul>
+                </div>
+                <div class="webLinksSharepoint">
+                    <a href=""><h4 class="centerText">Sharepoint Links</h4></a>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td><a href="">Sharepoint Link</a></td>
+                            <td><a href="">Sharepoint Link</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Sharepoint Link</a></td>
+                            <td><a href="">Sharepoint Link</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section class="buttons">
+                <div class="buttonDiv">
+                    <button class="bigButton" id="takenButtonPlus">Taken: <strong>0</strong></button>
+                    <div class="smallButtonDiv">
+                        <button class="smallButton" id="takenButtonMinus">-</button>
+                        <button class="smallButton" id="takenButtonReset">0</button>
+                    </div>
+                </div>
+                <div class="buttonDiv">
+                    <button class="bigButton" id="transferButtonPlus">Transferred: <strong>0</strong></button>
+                    <div class="smallButtonDiv">
+                        <button class="smallButton" id="transferButtonMinus">-</button>
+                        <button class="smallButton" id="transferButtonReset">0</button>
+                    </div>
+                </div>
+            </section>
+            <section class="dailyChecklist">
+                <h3>Daily Checklist</h3>
+                <hr>
+                <ol>
+                    <li>
+                        Check in on MSTeams at start of shift
+                    </li>
+                    <li>
+                        <a href="">Sign-in Sheet Link</a>
+                    </li>
+                    <p>***Work***</p>
+                    <li>
+                        <a href="">Daily Report Link</a>
+                    </li>
+                    <li>
+                        <a href="">Update Invoice Link</a>
+                    </ul>
+                </ol>
+            </section>
+        </main>
+    </body>
+    <script>
+        let takenButtonPlus = document.getElementById("takenButtonPlus");
+        let taken = 0;
+        takenButtonPlus.onclick = function() {
+            taken += 1;
+            takenButtonPlus.innerHTML = "Taken: <strong>" + taken + "</strong>";
+        };
+        let takenButtonMinus = document.getElementById("takenButtonMinus");
+        takenButtonMinus.onclick = function() {
+            if(taken > 0) { taken -= 1; }
+            takenButtonPlus.innerHTML = "Taken: <strong>" + taken + "</strong>";
+        };
+        let takenButtonReset = document.getElementById("takenButtonReset");
+        takenButtonReset.onclick = function() {
+            taken = 0;
+            takenButtonPlus.innerHTML = "Taken: <strong>" + taken + "</strong>";
+        };
+        let transferButtonPlus = document.getElementById("transferButtonPlus");
+        let transfer = 0;
+        transferButtonPlus.onclick = function() {
+            transfer += 1;
+            transferButtonPlus.innerHTML = "Transferred: <strong>" + transfer + "</strong>";
+        };
+        let transferButtonMinus = document.getElementById("transferButtonMinus");
+        transferButtonMinus.onclick = function() {
+            if(transfer > 0) { transfer -= 1; }
+            transferButtonPlus.innerHTML = "Transferred: <strong>" + transfer + "</strong>";
+        };
+        let transferButtonReset = document.getElementById("transferButtonReset");
+        transferButtonReset.onclick = function() {
+            transfer = 0;
+            transferButtonPlus.innerHTML = "Transferred: <strong>" + transfer + "</strong>";
+        };
+
+        const fullDate = new Date();
+        const today = fullDate.getDate();
+        const monthEnd = new Date(fullDate.getFullYear(), fullDate.getMonth()+1, 0).getDate();
+        if (today === 15 | today === monthEnd) {
+            alert("Invoice due within 24 hours!")
+        };
+    </script>
+</html>
+
